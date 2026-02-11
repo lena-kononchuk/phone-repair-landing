@@ -1,6 +1,6 @@
 <template>
-  <section class="hero">
-    <!-- Hero section content -->
+  <section class="hero py-20 min-h-screen">
+    <!-- Hero content -->
   </section>
 </template>
 

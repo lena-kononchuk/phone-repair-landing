@@ -1,7 +1,7 @@
 <template>
-  <section class="contacts">
-    <!-- Contacts and Map content -->
-  </section>
+  <div>
+    Contacts content
+  </div>
 </template>
 
 <script setup>

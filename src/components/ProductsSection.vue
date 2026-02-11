@@ -1,7 +1,7 @@
 <template>
-  <section class="products">
-    <!-- Products/Phones showcase -->
-  </section>
+  <div>
+    Contacts content
+  </div>
 </template>
 
 <script setup>

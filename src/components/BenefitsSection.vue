@@ -1,7 +1,7 @@
 <template>
-  <section class="benefits">
-    <!-- Benefits/Advantages content -->
-  </section>
+  <div>
+    Contacts content
+  </div>
 </template>
 
 <script setup>

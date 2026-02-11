@@ -1,7 +1,7 @@
 <template>
-  <section class="gallery">
-    <!-- Portfolio/Gallery content -->
-  </section>
+  <div>
+    Contacts content
+  </div>
 </template>
 
 <script setup>
