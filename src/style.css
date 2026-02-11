@@ -1,31 +1,55 @@
-@import url('https://fonts.cdnfonts.com/css/gilroy-bold');
-
 @import 'tailwindcss';
 
+@import url('https://fonts.cdnfonts.com/css/gilroy-bold');
+
 /* Custom animations for nav underline */
-@layer components {
-  .nav-link {
-    @apply relative pb-2 transition-colors duration-300;
-  }
-  
-  .nav-link::after {
-    @apply content-[''] absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
-  }
-  
-  .nav-link:hover::after,
-  .nav-link.active::after {
-    @apply w-full;
-  }
+.nav-link {
+  position: relative;
+  padding-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
 
-  .icon-circle {
-    @apply w-12 h-12 rounded-full flex items-center justify-center;
-  }
+.nav-link:hover {
+  color: #E31E24; /* primary color */
+}
 
-  .icon-circle-blue {
-    @apply bg-blue-500 text-white;
-  }
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #E31E24; /* primary color */
+  transition: width 0.3s ease;
+}
 
-  .icon-circle-pink {
-    @apply bg-pink-50 text-primary;
-  }
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Icon circles */
+.icon-circle {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.icon-circle-blue {
+  background-color: #3B82F6; /* blue-500 */
+  color: white;
+}
+
+.icon-circle-pink {
+  background-color: #FDF2F8; /* pink-50 */
+  color: #E31E24; /* primary color */
+}
+
+.icon-circle-pink:hover {
+  background-color: #FCE7F3; /* pink-100 */
 }

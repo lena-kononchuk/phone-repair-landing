@@ -21,8 +21,13 @@ dist-ssr
 *.ntvs*
 *.njsproj
 *.sln
+
 *DEVELOPMENT.md
 *COMPONENTS.md
 *EXAMPLES.md
 *COLORS.md
 *PROJECT_SETUP.md
+*ANIMATION-GUIDE.md
+*IMAGES-GUIDE.md
+*TODO.md
+*GRADIENTS.md
