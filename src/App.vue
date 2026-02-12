@@ -18,6 +18,13 @@
         <HeroSection />
       </section>
 
+      <!-- Products/Devices Section -->
+      <section
+        id="products"
+        class="relative"      >
+        <ProductsSection />
+      </section>
+
       <!-- Services Section -->
       <section
         id="services"
@@ -26,12 +33,7 @@
         <ServicesSection />
       </section>
 
-      <!-- Products/Devices Section -->
-      <section
-        id="products"
-        class="relative"      >
-        <ProductsSection />
-      </section>
+
 
       <!-- About Section -->
       <section
