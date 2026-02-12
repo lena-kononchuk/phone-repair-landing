@@ -28,28 +28,3 @@
 .nav-link.active::after {
   width: 100%;
 }
-
-/* Icon circles */
-.icon-circle {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 9999px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.3s ease;
-}
-
-.icon-circle-blue {
-  background-color: #3B82F6; /* blue-500 */
-  color: white;
-}
-
-.icon-circle-pink {
-  background-color: #FDF2F8; /* pink-50 */
-  color: #E31E24; /* primary color */
-}
-
-.icon-circle-pink:hover {
-  background-color: #FCE7F3; /* pink-100 */
-}

@@ -58,12 +58,27 @@
 
               <div class="text-right">
                 <!-- Phone Numbers -->
-                <div class="flex items-center gap-3">
-                  <span class="icon-circle icon-circle-pink hover:bg-pink-100 transition-colors" aria-label="Call us">
-                    <i class="fa-solid fa-phone text-sm"></i>
+            <div class="flex items-center gap-3 group cursor-pointer">
+                  <span
+                    class="w-10 h-10 flex items-center justify-center rounded-full
+                          bg-pink-50 text-[#E31E24]
+                          transition-colors duration-300
+                          group-hover:bg-red-500"
+                    aria-label="Call us"
+                  >
+                    <i
+                      class="fa-solid fa-phone text-sm
+                            transition-colors duration-300
+                            group-hover:text-white"
+                    ></i>
                   </span>
-                  <a href="tel:0698277338"
-                    class="text-md font-bold text-secondary hover:text-primary transition-colors tracking-tighter cursor-pointer">
+
+                  <a
+                    href="tel:0698277338"
+                    class="text-md font-bold text-secondary tracking-tighter
+                          transition-colors duration-300
+                          group-hover:text-primary"
+                  >
                     069 82 77 38
                   </a>
                 </div>
