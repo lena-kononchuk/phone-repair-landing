@@ -7,6 +7,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
 dist
 dist-ssr
@@ -21,14 +22,19 @@ dist-ssr
 *.ntvs*
 *.njsproj
 *.sln
+*.sw?
 
-*DEVELOPMENT.md
-*COMPONENTS.md
-*EXAMPLES.md
-*COLORS.md
-*PROJECT_SETUP.md
-*ANIMATION-GUIDE.md
-*IMAGES-GUIDE.md
-*TODO.md
-*GRADIENTS.md
-*Instructions.md
+# Build output
+dist/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# gh-pages
+.gh-pages/

@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "deploy:ci": "npm run build && gh-pages -d dist -u 'github-actions[bot] <github-actions[bot]@users.noreply.github.com>'"
   },
   "dependencies": {
     "gsap": "^3.14.2",
@@ -18,6 +21,7 @@
     "@tailwindcss/postcss": "^4.1.18",
     "@vitejs/plugin-vue": "^6.0.2",
     "autoprefixer": "^10.4.24",
+    "gh-pages": "^6.2.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.18",
     "vite": "^7.3.1"
