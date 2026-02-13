@@ -6,10 +6,8 @@ import path from 'path'
 export default defineConfig({
   plugins: [vue()],
   
-  // GitHub Pages base path
-  base: process.env.NODE_ENV === 'production' 
-    ? '/phone-repair-landing/' 
-    : '/',
+  // For username.github.io repository - NO base path needed
+  base: '/',
   
   resolve: {
     alias: {
