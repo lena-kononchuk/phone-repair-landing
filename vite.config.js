@@ -5,16 +5,15 @@ import path from 'path'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue()],
-  
-  // For username.github.io repository - NO base path needed
-  base: '/',
-  
+
+  base: '/phone-repair-landing/',
+
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src')
     }
   },
-  
+
   build: {
     // Minification with esbuild (faster than terser)
     minify: 'esbuild',
