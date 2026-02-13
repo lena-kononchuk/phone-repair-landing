@@ -1,11 +1,11 @@
 <template>
-  <section class="pt-20 pb-16 lg:pt-32 lg:pb-24 relative overflow-hidden" id="hero">
+  <section class="pt-20 pb-10 lg:pt-32 lg:pb-12 relative overflow-hidden" id="hero">
     <div class="container mx-auto px-4">
       <!-- Main Grid -->
-      <div class="grid lg:grid-cols-2 gap-16 items-center mb-20">
+      <div class="grid lg:grid-cols-2  gap-8 sm:gap-16 items-center mb-4">
         <!-- Text Content (Order 2 on mobile, Order 1 on desktop) -->
         <div class="order-2 lg:order-1 space-y-8 text-center lg:text-left">
-          <h1 class="text-4xl md:text-5xl xl:text-6xl font-extrabold text-secondary leading-tight">
+          <h1 class="text-3xl md:text-4xl xl:text-5xl font-extrabold text-secondary leading-tight">
             ПРОБЛЕМИ З ВАШИМ<br>
             ПРИСТРОЄМ?
           </h1>
@@ -59,13 +59,13 @@
       </div>
 
       <!-- Features Grid -->
-      <div class="grid md:grid-cols-3 gap-8 lg:gap-12 max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
         <div
           v-for="feature in features"
           :key="feature.id"
-          class="flex flex-col items-center text-center space-y-4 cursor-pointer hover:-translate-y-2 transition-all duration-300"
+          class="flex flex-col items-center text-center space-y-4 "
         >
-          <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 hover:bg-blue-200 hover:shadow-lg">
+          <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300">
             <img :src="feature.icon" :alt="feature.title" class="w-12 h-12 object-contain">
           </div>
           <div class="text-base text-secondary font-bold leading-tight">
@@ -79,7 +79,6 @@
     </div>
   </section>
 </template>
-
 <script setup>
 // Features data - small dataset can live in component
 const features = [
@@ -92,14 +91,14 @@ const features = [
   {
     id: 2,
     icon: '/images/icons/Replacement.png',
-    title: 'Підмінний телефон - Безкоштовно',
-    description: 'Телефон взамін Безкоштовно, поки ваш в ремонті'
+    title: 'Підмінний телефон – Безкоштовно',
+    description: 'Телефон взамін безкоштовно, поки ваш в ремонті'
   },
   {
     id: 3,
     icon: '/images/icons/Replacement.png',
     title: 'Турбота про вас',
-    description: 'Незначні поломки - робимо безкоштовно.'
+    description: 'Незначні поломки – робимо безкоштовно.'
   }
 ]
 </script>

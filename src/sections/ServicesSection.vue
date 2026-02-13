@@ -1,20 +1,20 @@
 <template>
-  <section class="py-16 lg:py-24 relative" id="services">
+  <section class="py-10 lg:py-12 relative" id="services">
     <div class="container mx-auto px-4">
       <!-- Title -->
-      <h2 class="text-3xl md:text-4xl xl:text-5xl text-center font-extrabold text-secondary leading-tight mb-4">
+      <h2 class="text-2xl md:text-3xl xl:text-4xl text-center font-extrabold text-secondary leading-tight mb-4">
         НАШІ ПОСЛУГИ
       </h2>
       <div class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
         Професійний ремонт та обслуговування вашої техніки
       </div>
 
-      <!-- Filter Tabs - Using useFilter composable -->
+      <!-- Filter Tabs -->
       <div class="flex flex-wrap justify-center gap-3 mb-12">
         <button
           v-for="category in serviceCategories"
           :key="category.id"
-          @click="setCategory(category.id)"
+          @click="activeCategory = category.id"
           :class="[
             'px-6 py-3 rounded-lg font-semibold transition-all duration-300 cursor-pointer',
             activeCategory === category.id
@@ -26,15 +26,17 @@
         </button>
       </div>
 
-      <!-- Services Grid - v-for with filtered data from composable -->
+      <!-- Services Grid -->
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div
-          v-for="service in filteredItems"
+          v-for="service in filteredServices"
           :key="service.id"
-          class="bg-white rounded-2xl p-6 hover:-translate-y-1 transition-all duration-300 group cursor-pointer "
+          class="bg-white rounded-2xl p-6 hover:-translate-y-1 transition-all duration-300 group cursor-pointer shadow-md hover:shadow-xl"
         >
-          <div class="w-16 h-16 bg-orange-50 rounded-full flex items-center justify-center mb-4 mx-auto">
-            <i :class="['text-[#FF6B00] text-2xl', service.icon]"></i>
+          <div class="w-16 h-16 bg-orange-50 rounded-full flex items-center justify-center mb-4 mx-auto
+                      group-hover:bg-[#FF6B00] transition-colors duration-300">
+            <i :class="['text-2xl transition-colors duration-300', service.icon,
+                        'text-[#FF6B00] group-hover:text-white']"></i>
           </div>
           <h3 class="text-lg font-bold text-secondary mb-2 text-center">
             {{ service.title }}
@@ -49,7 +51,7 @@
       </div>
 
       <!-- Empty State -->
-      <div v-if="filteredItems.length === 0" class="text-center py-12">
+      <div v-if="filteredServices.length === 0" class="text-center py-12">
         <div class="text-gray-500 text-lg">Послуги не знайдено</div>
       </div>
     </div>
@@ -57,9 +59,92 @@
 </template>
 
 <script setup>
-import { services, serviceCategories } from '@/data/services'
-import { useFilter } from '@/composables/useFilter'
+import { ref, computed } from 'vue'
 
-// Using reusable filter composable - demonstrates proper composable usage
-const { activeCategory, filteredItems, setCategory } = useFilter(services, 'all')
+// Active category state
+const activeCategory = ref('all')
+
+// Categories for filtering
+const serviceCategories = [
+  { id: 'all', name: 'Всі послуги' },
+  { id: 'phone', name: 'Телефони' },
+  { id: 'laptop', name: 'Ноутбуки' },
+  { id: 'other', name: 'Інше' }
+]
+
+// Services data - inline for simplicity
+const services = [
+  {
+    id: 1,
+    title: 'Заміна екрану',
+    description: 'Професійна заміна розбитого або пошкодженого екрану',
+    icon: 'fa-solid fa-mobile-screen-button',
+    category: 'phone',
+    price: 'від 1500 грн'
+  },
+  {
+    id: 2,
+    title: 'Заміна батареї',
+    description: 'Швидка заміна батареї з гарантією якості',
+    icon: 'fa-solid fa-battery-full',
+    category: 'phone',
+    price: 'від 800 грн'
+  },
+  {
+    id: 3,
+    title: 'Ремонт материнської плати',
+    description: 'Діагностика та ремонт складних поломок',
+    icon: 'fa-solid fa-microchip',
+    category: 'phone',
+    price: 'від 2000 грн'
+  },
+  {
+    id: 4,
+    title: 'Чистка від пилу',
+    description: 'Професійна чистка ноутбука від пилу',
+    icon: 'fa-solid fa-wind',
+    category: 'laptop',
+    price: 'від 500 грн'
+  },
+  {
+    id: 5,
+    title: 'Заміна клавіатури',
+    description: 'Заміна пошкодженої або несправної клавіатури',
+    icon: 'fa-solid fa-keyboard',
+    category: 'laptop',
+    price: 'від 1200 грн'
+  },
+  {
+    id: 6,
+    title: 'Оновлення SSD',
+    description: 'Встановлення нового SSD та перенесення даних',
+    icon: 'fa-solid fa-hard-drive',
+    category: 'laptop',
+    price: 'від 1000 грн'
+  },
+  {
+    id: 7,
+    title: 'Ремонт годинників',
+    description: 'Ремонт смарт-годинників та фітнес-браслетів',
+    icon: 'fa-solid fa-clock',
+    category: 'other',
+    price: 'від 600 грн'
+  },
+  {
+    id: 8,
+    title: 'Ремонт навушників',
+    description: 'Відновлення навушників будь-якої складності',
+    icon: 'fa-solid fa-headphones',
+    category: 'other',
+    price: 'від 400 грн'
+  }
+]
+
+// Computed filtered services
+const filteredServices = computed(() => {
+  if (activeCategory.value === 'all') {
+    return services
+  }
+  return services.filter(service => service.category === activeCategory.value)
+})
 </script>

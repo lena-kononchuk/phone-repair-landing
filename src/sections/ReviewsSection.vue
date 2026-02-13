@@ -1,10 +1,10 @@
 <template>
-  <section class="py-16 lg:py-24 relative"  id="reviews">
+  <section class="py-10 lg:py-12 relative"  id="reviews">
     <div class="container mx-auto px-4">
       <!-- Title with Navigation -->
       <div class="mb-12">
         <div class="flex-1">
-          <h2 class="text-3xl md:text-4xl xl:text-5xl font-extrabold text-secondary leading-tight mb-2">
+          <h2 class="text-2xl md:text-3xl xl:text-4xl font-extrabold text-secondary leading-tight mb-2">
             ВІДГУКИ ЩАСЛИВИХ КЛІЄНТІВ
           </h2>
           <div class="text-gray-600 max-w-2xl">
@@ -41,7 +41,7 @@
         }"
       >
         <swiper-slide v-for="review in reviews" :key="review.id">
-          <div class="bg-white rounded-2xl p-8 h-full shadow-card hover:shadow-card-hover transition-all duration-300">
+          <div class="bg-white rounded-2xl p-4 sm:p-8 h-full shadow-card hover:shadow-card-hover transition-all duration-300">
 
           <!-- Author Info -->
             <div class="flex  gap-4 mb-4">

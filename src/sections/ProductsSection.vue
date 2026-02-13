@@ -1,9 +1,9 @@
 <template>
-  <section class="py-16 lg:py-24 relative"  id="products">
+  <section class="py-10 lg:py-12 relative"  id="products">
     <div class="container mx-auto px-4">
       <!-- Title with Navigation -->
       <div class="mb-8">
-        <h2 class="text-3xl md:text-4xl xl:text-5xl font-extrabold text-secondary leading-tight flex-1">
+        <h2 class="text-2xl md:text-3xl xl:text-4xl font-extrabold text-secondary leading-tight flex-1">
           МИ ПРАЦЮЄМО З ПРИСТРОЯМИ
         </h2>
 

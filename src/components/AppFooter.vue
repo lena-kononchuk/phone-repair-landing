@@ -5,7 +5,7 @@
       <div class="grid md:grid-cols-3 gap-10 items-start">
 
         <!-- LEFT: Logo -->
-        <div class="flex flex-col items-center md:items-start space-y-4">
+        <div class="flex flex-col items-start md:items-start space-y-4">
           <a href="#" class="flex items-center">
             <img src="/images/logo/logo.svg" alt="ARRON Service Center" class="h-14 w-auto"
               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'" />
@@ -20,7 +20,7 @@
               </div>
             </div>
           </a>
-          <div class="text-sm text-gray-500 text-center md:text-left">
+          <div class="text-sm text-gray-500 md:text-left">
             Сервісний центр з професійної діагностики та ремонту техніки.
           </div>
         </div>
@@ -101,7 +101,7 @@
 
         <!-- RIGHT: Socials -->
         <div>
-          <div class="text-sm font-semibold mb-4 text-gray-600">
+          <div class="text-sm font-semibold mb-4 text-gray-600 flex justify-center md:justify-start ">
             Ми в соціальних мережах:
           </div>
           <div class="flex justify-center md:justify-start gap-4">

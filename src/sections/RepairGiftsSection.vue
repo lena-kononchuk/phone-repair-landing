@@ -1,12 +1,12 @@
 <template>
-  <section class="py-16 lg:py-24 relative" id="gifts">
+  <section class="py-10 lg:py-12 relative" id="gifts">
     <div class="container mx-auto px-4">
       <div>
         <!-- Left Side: Gifts Slider -->
         <div>
           <!-- Title with Navigation -->
           <div class="mb-8">
-            <h2 class="text-3xl md:text-4xl xl:text-5xl font-extrabold text-secondary leading-tight mb-6">
+            <h2 class="text-2xl md:text-3xl xl:text-4xl font-extrabold text-secondary leading-tight mb-6">
               НА КОЖНИЙ РЕМОНТ ГАРАНТОВАНО<br>ПОДАРУНОК НА ВАШ ВИБІР:
             </h2>
 

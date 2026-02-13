@@ -1,10 +1,10 @@
 <template>
-  <section class="py-16 lg:py-24">
+  <section class="py-10 lg:py-12">
     <div class="container mx-auto px-4">
       <!-- Title with Navigation -->
       <div class=" mb-12">
         <div class="flex-1">
-          <h2 class="text-3xl md:text-4xl xl:text-5xl font-extrabold text-secondary leading-tight mb-2">
+          <h2 class="text-2xl md:text-3xl xl:text-4xl font-extrabold text-secondary leading-tight mb-2">
             ГАЛЕРЕЯ НАШИХ РОБІТ
           </h2>
           <div class="text-gray-600 max-w-2xl">

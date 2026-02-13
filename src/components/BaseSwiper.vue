@@ -1,5 +1,5 @@
 <template>
-  <div class="pb-12">
+  <div class="pb-10">
     <swiper
       :slides-per-view="slidesPerView"
       :space-between="spaceBetween"

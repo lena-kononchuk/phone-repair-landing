@@ -1,8 +1,8 @@
 <template>
-  <section class="py-16 lg:py-24 relative" id="about">
+  <section class="py-10 lg:py-12 relative" id="about">
     <div class="container mx-auto px-4">
       <!-- Title -->
-      <h2 class="text-3xl md:text-4xl xl:text-5xl text-center font-extrabold text-secondary leading-tight mb-4">
+      <h2 class="text-2xl md:text-3xl xl:text-4xl text-center font-extrabold text-secondary leading-tight mb-4">
        ПРО КОМПАНІЮ ARRON
       </h2>
       <div class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
