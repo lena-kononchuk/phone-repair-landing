@@ -21,7 +21,7 @@
         <ServicesSection />
 
       <!-- About/Benefits Section -->
-        <BenefitsSection />
+        <AboutSection />
 
       <!-- Repair Gifts Section -->
         <RepairGiftsSection />
@@ -44,10 +44,11 @@ import AppHeader from './components/AppHeader.vue'
 import HeroSection from './sections/HeroSection.vue'
 import ServicesSection from './sections/ServicesSection.vue'
 import ProductsSection from './sections/ProductsSection.vue'
-import BenefitsSection from './sections/BenefitsSection.vue'
+import AboutSection from './sections/AboutSection.vue'
 import RepairGiftsSection from './sections/RepairGiftsSection.vue'
 import ReviewsSection from './sections/ReviewsSection.vue'
 import AppFooter from './components/AppFooter.vue'
 import ContactsSection from './sections/ContactsSection.vue'
+
 
 </script>

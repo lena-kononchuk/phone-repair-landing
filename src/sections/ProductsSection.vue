@@ -1,5 +1,9 @@
 <template>
-  <section class="py-10 lg:py-12 relative"  id="products">
+  <section
+    ref="sectionRef"
+    class="py-10 lg:py-16 relative"
+    id="products"
+  >
     <div class="container mx-auto px-4">
       <!-- Title with Navigation -->
       <div class="mb-8">
@@ -26,6 +30,7 @@
 
       <!-- Data-driven Swiper with BaseSwiper component -->
       <BaseSwiper
+        v-if="isVisible"
         :slides-per-view="1.2"
         :space-between="16"
         :centered-slides="true"
@@ -40,6 +45,9 @@
             <img
               :src="device.image"
               :alt="device.alt"
+              width="160"
+              height="160"
+              loading="lazy"
               class="w-40 h-40 object-contain mx-auto mb-4 transition-transform duration-500 group-hover:scale-110"
             >
             <div class="flex items-center justify-between">
@@ -51,6 +59,11 @@
           </div>
         </swiper-slide>
       </BaseSwiper>
+
+      <!-- Skeleton loader -->
+      <div v-else class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div v-for="i in 6" :key="i" class="h-64 bg-gray-200 rounded-3xl animate-pulse"></div>
+      </div>
     </div>
   </section>
 </template>
@@ -58,6 +71,10 @@
 <script setup>
 import { SwiperSlide } from 'swiper/vue'
 import BaseSwiper from '../components/BaseSwiper.vue'
+import { useLazyLoad } from '@/composables/useLazyLoad'
+
+// Lazy load this section
+const { sectionRef, isVisible } = useLazyLoad(0.1, '200px')
 
 // Swiper breakpoints configuration
 const swiperBreakpoints = {

@@ -1,5 +1,9 @@
 <template>
-  <section class="py-10 lg:py-12 relative"  id="reviews">
+  <section
+    ref="sectionRef"
+    class="py-10 lg:py-16 relative"
+    id="reviews"
+  >
     <div class="container mx-auto px-4">
       <!-- Title with Navigation -->
       <div class="mb-12">
@@ -31,6 +35,7 @@
 
       <!-- Reviews Swiper -->
       <BaseSwiper
+        v-if="isVisible"
         :slides-per-view="1.2"
         :space-between="16"
         :centered-slides="true"
@@ -72,6 +77,11 @@
           </div>
         </swiper-slide>
       </BaseSwiper>
+
+      <!-- Skeleton loader -->
+      <div v-else class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div v-for="i in 5" :key="i" class="h-48 bg-gray-200 rounded-2xl animate-pulse"></div>
+      </div>
     </div>
   </section>
 </template>
@@ -79,6 +89,10 @@
 <script setup>
 import { SwiperSlide } from 'swiper/vue'
 import BaseSwiper from '../components/BaseSwiper.vue'
+import { useLazyLoad } from '@/composables/useLazyLoad'
+
+// Lazy load this section
+const { sectionRef, isVisible } = useLazyLoad(0.1, '200px')
 
 // Swiper breakpoints for reviews
 const swiperBreakpoints = {

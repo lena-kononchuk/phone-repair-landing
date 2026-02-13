@@ -1,5 +1,5 @@
 <template>
-  <section id="contacts" class="py-10 lg:py-12 bg-gradient-to-br">
+  <section id="contacts" class="py-10 lg:py-16 bg-gradient-to-br">
     <div class="container mx-auto px-4">
       <!-- Desktop/Tablet Layout -->
       <div class="max-w-6xl mx-auto border border-gray-200 rounded-3xl bg-white/80 backdrop-blur-sm shadow-xl p-6 sm:p-10 lg:p-16">

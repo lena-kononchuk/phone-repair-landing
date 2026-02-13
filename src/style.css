@@ -46,6 +46,16 @@
   }
 }
 
+/* Font display optimization for Font Awesome */
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-display: swap; /* ✅ Optimize font loading */
+}
+
+@font-face {
+  font-family: 'Font Awesome 6 Brands';
+  font-display: swap; /* ✅ Optimize font loading */
+}
 
 /* Custom nav animations */
 .nav-link {

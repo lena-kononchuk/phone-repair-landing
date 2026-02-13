@@ -1,8 +1,21 @@
 <template>
-  <section class="py-10 lg:py-12 relative" id="services">
-    <div class="container mx-auto px-4">
+  <section
+    ref="sectionRef"
+    class="py-10 lg:py-16 relative"
+    id="services"
+  >
+    <!-- Skeleton loader before content loads -->
+    <div v-if="!isVisible" class="container mx-auto px-4">
+      <div class="h-16 bg-gray-200 rounded-lg animate-pulse mb-12 max-w-md mx-auto"></div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div v-for="i in 8" :key="i" class="h-64 bg-gray-200 rounded-2xl animate-pulse"></div>
+      </div>
+    </div>
+
+    <!-- Actual content -->
+    <div v-else class="container mx-auto px-4">
       <!-- Title -->
-      <h2 class="text-2xl md:text-3xl xl:text-4xl text-center font-extrabold text-secondary leading-tight mb-4">
+      <h2 class="text-3xl md:text-4xl xl:text-5xl text-center font-extrabold text-secondary leading-tight mb-4">
         НАШІ ПОСЛУГИ
       </h2>
       <div class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
@@ -60,6 +73,10 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import { useLazyLoad } from '@/composables/useLazyLoad'
+
+// Lazy load this section
+const { sectionRef, isVisible } = useLazyLoad(0.1, '200px')
 
 // Active category state
 const activeCategory = ref('all')

@@ -1,5 +1,5 @@
 <template>
-  <section class="py-10 lg:py-12 relative" id="gifts">
+  <section class="py-10 lg:py-16 relative" id="gifts">
     <div class="container mx-auto px-4">
       <div>
         <!-- Left Side: Gifts Slider -->
