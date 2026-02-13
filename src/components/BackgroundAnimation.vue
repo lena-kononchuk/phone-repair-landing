@@ -1,5 +1,5 @@
 <template>
-  <div ref="containerRef" class="fixed inset-0"></div>
+  <div ref="containerRef" class="fixed inset-0 pointer-events-none -z-10"></div>
 </template>
 
 <script setup>
@@ -9,7 +9,7 @@ import * as THREE from 'three'
 const containerRef = ref(null)
 
 let camera, scene, renderer, raycaster
-let parentTransform, sphereInter
+let parentTransform
 let animationId = null
 
 const pointer = new THREE.Vector2()
@@ -17,11 +17,9 @@ const radius = 100
 let theta = 0
 
 const init = () => {
-  // Scene
   scene = new THREE.Scene()
   scene.background = new THREE.Color(0xf0f0f0)
 
-  // Camera
   camera = new THREE.PerspectiveCamera(
     70,
     window.innerWidth / window.innerHeight,
@@ -29,22 +27,12 @@ const init = () => {
     10000
   )
 
-  // Raycaster
   raycaster = new THREE.Raycaster()
   raycaster.params.Line.threshold = 3
-
-  // Sphere for intersections
-  // const geometry = new THREE.SphereGeometry(5)
-  // const material = new THREE.MeshBasicMaterial({ color: 0xff0000 })
-
-  // sphereInter = new THREE.Mesh(geometry, material)
-  // sphereInter.visible = false
-  // scene.add(sphereInter)
 
   // Line geometry
   const lineGeometry = new THREE.BufferGeometry()
   const points = []
-
   const point = new THREE.Vector3()
   const direction = new THREE.Vector3()
 
@@ -97,7 +85,7 @@ const init = () => {
   scene.add(parentTransform)
 
   // Renderer
-  renderer = new THREE.WebGLRenderer({ antialias: true })
+  renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
   renderer.setPixelRatio(window.devicePixelRatio)
   renderer.setSize(window.innerWidth, window.innerHeight)
 
@@ -109,32 +97,19 @@ const animate = () => {
   render()
 }
 
+// BackgroundAnimation.vue
 const render = () => {
-  theta += 0.1
+  theta += 0.02
 
-  camera.position.x =
-    radius * Math.sin(THREE.MathUtils.degToRad(theta))
-  camera.position.y =
-    radius * Math.sin(THREE.MathUtils.degToRad(theta))
-  camera.position.z =
-    radius * Math.cos(THREE.MathUtils.degToRad(theta))
+  camera.position.x = radius * Math.sin(THREE.MathUtils.degToRad(theta))
+  camera.position.y = radius * Math.sin(THREE.MathUtils.degToRad(theta))
+  camera.position.z = radius * Math.cos(THREE.MathUtils.degToRad(theta))
 
   camera.lookAt(scene.position)
   camera.updateMatrixWorld()
 
   raycaster.setFromCamera(pointer, camera)
-
-  const intersects = raycaster.intersectObjects(
-    parentTransform.children,
-    true
-  )
-
-  // if (intersects.length > 0) {
-  //   sphereInter.visible = true
-  //   sphereInter.position.copy(intersects[0].point)
-  // } else {
-  //   sphereInter.visible = false
-  // }
+  raycaster.intersectObjects(parentTransform.children, true)
 
   renderer.render(scene, camera)
 }

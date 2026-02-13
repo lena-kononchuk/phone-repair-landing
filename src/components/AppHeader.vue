@@ -39,11 +39,6 @@
               :class="{ 'active text-primary': activeSection === 'reviews' }">
               Відгуки
             </a>
-            <a href="#orders"
-              class="nav-link text-base font-medium text-secondary hover:text-primary tracking-tighter leading-none"
-              :class="{ 'active text-primary': activeSection === 'orders' }">
-              Виконанні замовлення
-            </a>
             <a href="#contacts"
               class="nav-link text-base font-medium text-secondary hover:text-primary tracking-tighter leading-none"
               :class="{ 'active text-primary': activeSection === 'contacts' }">
@@ -58,34 +53,24 @@
 
               <div class="text-right">
                 <!-- Phone Numbers -->
-            <div class="flex items-center gap-3 group cursor-pointer">
-                  <span
-                    class="w-10 h-10 flex items-center justify-center rounded-full
-                          bg-pink-50 text-[#E31E24]
+                <div class="flex items-center gap-3 group cursor-pointer">
+                  <a href="tel:+380698277338" class="flex items-center gap-3 group cursor-pointer">
+                    <span class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center
+                       transition-colors duration-300
+                       group-hover:bg-[#FF6B00]">
+                      <i class="fa-solid fa-phone text-gray-600 text-sm
                           transition-colors duration-300
-                          group-hover:bg-red-500"
-                    aria-label="Call us"
-                  >
-                    <i
-                      class="fa-solid fa-phone text-sm
-                            transition-colors duration-300
-                            group-hover:text-white"
-                    ></i>
-                  </span>
-
-                  <a
-                    href="tel:0698277338"
-                    class="text-md font-bold text-secondary tracking-tighter
-                          transition-colors duration-300
-                          group-hover:text-primary"
-                  >
-                    069 82 77 38
+                          group-hover:text-white"></i>
+                    </span>
+                    <span class="text-gray-500 text-sm font-medium
+                           transition-colors duration-300
+                           group-hover:text-[#FF6B00]">
+                      +38 (069) 82 77 38
+                    </span>
                   </a>
                 </div>
               </div>
             </div>
-
-
           </div>
 
           <!-- Mobile Menu Button -->
@@ -119,10 +104,6 @@
                 class="text-secondary hover:text-primary transition-colors duration-200 font-medium py-2">
                 Відгуки
               </a>
-              <a href="#orders" @click="closeMobileMenu"
-                class="text-secondary hover:text-primary transition-colors duration-200 font-medium py-2">
-                Виконанні замовлення
-              </a>
               <a href="#contacts" @click="closeMobileMenu"
                 class="text-secondary hover:text-primary transition-colors duration-200 font-medium py-2">
                 Контакти
@@ -132,17 +113,17 @@
               <div class="pt-4 border-t border-gray-light space-y-3">
                 <!-- Address -->
                 <div class="flex items-center gap-2">
-                <!-- Phone Buttons -->
-                <div class="flex items-center gap-3">
-                  <span class="icon-circle icon-circle-pink hover:bg-pink-100 transition-colors" aria-label="Call us">
-                    <i class="fa-solid fa-phone text-sm"></i>
-                  </span>
-                  <a href="tel:0698277338"
-                    class="text-md font-bold text-secondary hover:text-primary transition-colors tracking-tighter cursor-pointer">
-                    069 82 77 38
-                  </a>
+                  <!-- Phone Buttons -->
+                  <div class="flex items-center gap-3">
+                    <span class="icon-circle icon-circle-pink hover:bg-pink-100 transition-colors" aria-label="Call us">
+                      <i class="fa-solid fa-phone text-sm"></i>
+                    </span>
+                    <a href="tel:0698277338"
+                      class="text-md font-bold text-secondary hover:text-primary transition-colors tracking-tighter cursor-pointer">
+                      069 82 77 38
+                    </a>
+                  </div>
                 </div>
-  </div>
               </div>
             </div>
           </nav>

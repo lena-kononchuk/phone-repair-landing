@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+
   content: [
     "./index.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
@@ -7,13 +8,10 @@ export default {
   theme: {
     extend: {
       colors: {
-
         primary: '#E31E24',
         secondary: '#1A1A1A',
         accent: '#FF4444',
         'brand-red': '#E2001A',
-
-
         gray: {
           light: '#F5F5F5',
           medium: '#9E9E9E',
@@ -47,8 +45,6 @@ export default {
         },
       },
 
-
-
       borderRadius: {
         'xl': '1rem',
         '2xl': '1.5rem',
@@ -59,6 +55,8 @@ export default {
         'soft': '0 2px 8px rgba(0, 0, 0, 0.08)',
         'medium': '0 4px 16px rgba(0, 0, 0, 0.12)',
         'strong': '0 8px 24px rgba(0, 0, 0, 0.16)',
+        'card': '0px 8px 10px 0px rgba(255, 107, 0, 0.08)',
+        'card-hover': '0px 50px 60px 0px rgba(255, 107, 0, 0.08)',
       },
     },
   },

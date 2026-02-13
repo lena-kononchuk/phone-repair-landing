@@ -23,9 +23,9 @@
         </svg>
 
         <!-- Text -->
-        <p class="text-secondary font-medium animate-pulse">
+        <div class="text-secondary font-medium animate-pulse">
           Завантаження...
-        </p>
+        </div>
       </div>
     </div>
   </Transition>
