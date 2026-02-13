@@ -1,5 +1,5 @@
 <template>
-  <section class="pt-20 pb-10 lg:pt-32 lg:pb-16 relative overflow-hidden" id="hero">
+  <section class="pt-20 pb-10 lg:pt-32 lg:pb-12 relative overflow-hidden" id="hero">
     <div class="container mx-auto px-4">
       <!-- Main Grid -->
       <div class="grid lg:grid-cols-2  gap-8 sm:gap-16 items-center mb-4">
@@ -32,13 +32,14 @@
             <!-- Dashed Circle Border -->
             <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[102%] h-[102%] lg:w-[104%] lg:h-[104%] border-2 border-dashed border-gray-300 rounded-full z-10"></div>
 
-            <!-- Master Image with optimization -->
+            <!-- Master Image - LCP with fetchpriority -->
             <div class="absolute inset-0 flex items-center justify-center z-30">
               <img
                 src="/images/hero/master2.png"
                 alt="Майстер ремонту"
                 width="550"
                 height="550"
+                fetchpriority="high"
                 class="w-[85%] lg:w-[80%] h-auto object-contain"
               >
             </div>
@@ -68,11 +69,12 @@
           class="flex flex-col items-center text-center space-y-4 "
         >
           <div class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300">
-            <img
-              :src="feature.icon"
-              :alt="feature.title"
+            <img 
+              :src="feature.icon" 
+              :alt="feature.title" 
               width="48"
               height="48"
+              loading="lazy"
               class="w-12 h-12 object-contain"
             >
           </div>
